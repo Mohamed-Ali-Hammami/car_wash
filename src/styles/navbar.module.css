@@ -1,0 +1,93 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content */
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #91efff, #7369ff);
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  gap: 1rem;
+}
+
+.navbar-right {
+  gap: 1.25rem; /* More spacing between the buttons */
+}
+
+/* Sidebar (menu) button */
+.navbar-left .menu-btn {
+  color: white;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-left .menu-btn:hover {
+  transform: scale(1.1);
+  color: #2c30f8;
+}
+
+/* Logo styling */
+.navbar-left .logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* Title styling */
+.navbar-left .title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation button styles (used in the full navbar) */
+.contact-btn {
+  background-color: transparent;
+  color: white;
+  height: 40px;
+  padding: 0.35rem 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive: Hide the right section on small screens */
+@media (max-width: 768px) {
+  .navbar-right {
+    display: none;
+  }
+}
+
+/* Optional: Adjust navbar layout on extra-small screens if needed */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row; /* Keep a row layout */
+    justify-content: center;
+    text-align: center;
+  }
+}
