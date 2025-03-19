@@ -1,17 +1,16 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/sidebar.module.css';
 import { FaPhone, FaEnvelope, FaYoutube, FaInstagram, FaFacebookF } from 'react-icons/fa';
-import ContactUs from './contact_us';
 import Image from 'next/image';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  onContactClick: () => void;  // Callback to open ContactUs externally
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onContactClick }) => {
   if (!isOpen) return null;
 
   return (
@@ -40,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <button className={styles.contactBtn}>Infos</button>
           <button 
             className={styles.contactBtn} 
-            onClick={() => setIsContactOpen(true)}
+            onClick={onContactClick}  // Call external modal opener
           >
             Nous contacter
           </button>
@@ -79,11 +78,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <FaFacebookF />
             </a>
           </div>
-
-          {/* Modal de Contact Us */}
-          {isContactOpen && (
-            <ContactUs onClose={() => setIsContactOpen(false)} />
-          )}
         </div>
       </div>
     </div>

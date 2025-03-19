@@ -61,6 +61,7 @@ const Navbar: React.FC = () => {
         <Sidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
+          onContactClick={() => setIsContactOpen(true)}
         />
       )}
 
